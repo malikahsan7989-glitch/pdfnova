@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_NAME } from "@/lib/site";
 import MergePdf from "../components/MergePdf";
 import ToolPageLayout from "../components/shared/ToolPageLayout";
 
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
     "Merge multiple PDF files into one document online for free, right in your browser. No upload, no signup, no watermark.",
   alternates: { canonical: "/merge-pdf" },
   openGraph: {
+    siteName: SITE_NAME,
     title: "Merge PDF Online Free | Foldryn",
     description: "Combine multiple PDF files into one document, right in your browser.",
     url: "/merge-pdf",

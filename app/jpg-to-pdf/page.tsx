@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_NAME } from "@/lib/site";
 import JpgToPdf from "../components/tools/JpgToPdf";
 import ToolPageLayout from "../components/shared/ToolPageLayout";
 
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
     "Convert JPG or PNG images to a PDF online for free, right in your browser. Combine multiple images into one document. No upload, no signup.",
   alternates: { canonical: "/jpg-to-pdf" },
   openGraph: {
+    siteName: SITE_NAME,
     title: "JPG to PDF Converter Online Free | Foldryn",
     description: "Turn your JPG or PNG images into a single PDF document, right in your browser.",
     url: "/jpg-to-pdf",

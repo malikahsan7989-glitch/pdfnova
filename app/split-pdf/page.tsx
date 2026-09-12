@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_NAME } from "@/lib/site";
 import SplitPdf from "../components/tools/SplitPdf";
 import ToolPageLayout from "../components/shared/ToolPageLayout";
 
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
     "Split a PDF online for free. Extract specific pages or split every page into its own file, right in your browser. No upload, no signup.",
   alternates: { canonical: "/split-pdf" },
   openGraph: {
+    siteName: SITE_NAME,
     title: "Split PDF Online Free | Foldryn",
     description:
       "Extract pages or split every page of a PDF into separate files, right in your browser.",

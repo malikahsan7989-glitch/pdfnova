@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_NAME } from "@/lib/site";
 import PdfToJpg from "../components/tools/PdfToJpg";
 import ToolPageLayout from "../components/shared/ToolPageLayout";
 
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
     "Convert PDF pages to JPG images online for free, right in your browser. Download a single JPG or a ZIP of all pages. No upload, no signup.",
   alternates: { canonical: "/pdf-to-jpg" },
   openGraph: {
+    siteName: SITE_NAME,
     title: "PDF to JPG Converter Online Free | Foldryn",
     description: "Convert every page of your PDF into a JPG image, right in your browser.",
     url: "/pdf-to-jpg",

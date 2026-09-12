@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     description:
       "Merge, split, compress, and convert PDF files quickly and privately, right in your browser.",
     url: "/",
+    siteName: SITE_NAME,
     type: "website",
   },
 };

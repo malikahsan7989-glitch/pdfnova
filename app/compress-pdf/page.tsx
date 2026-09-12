@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_NAME } from "@/lib/site";
 import CompressPdf from "../components/tools/CompressPdf";
 import ToolPageLayout from "../components/shared/ToolPageLayout";
 
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
     "Compress a PDF online for free, right in your browser. See your original and new file size before you download. No upload required.",
   alternates: { canonical: "/compress-pdf" },
   openGraph: {
+    siteName: SITE_NAME,
     title: "Compress PDF Online Free | Foldryn",
     description: "Reduce your PDF's file size directly in your browser.",
     url: "/compress-pdf",
