@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { tools } from "@/lib/tools";
+import { toolCategories, toolsByCategory } from "@/lib/tools";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -21,24 +21,35 @@ export default function MobileMenu() {
       </button>
 
       {open && (
-        <div className="fixed inset-x-0 top-[65px] z-50 border-b border-slate-200 bg-white px-4 pb-6 pt-2 shadow-lg">
-          <p className="mt-3 px-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
-            Tools
-          </p>
-          <nav className="mt-1 flex flex-col">
-            {tools.map((tool) => (
-              <Link
-                key={tool.slug}
-                href={tool.href}
-                onClick={() => setOpen(false)}
-                className="rounded-lg px-2 py-3 text-base font-medium text-slate-800 hover:bg-slate-50"
-              >
-                {tool.title}
-              </Link>
-            ))}
-          </nav>
+        <div className="fixed inset-x-0 top-[65px] z-50 max-h-[calc(100vh-65px)] overflow-y-auto border-b border-slate-200 bg-white px-4 pb-6 pt-2 shadow-lg">
+          {toolCategories.map((category) => (
+            <div key={category}>
+              <p className="mt-4 px-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
+                {category}
+              </p>
+              <nav className="mt-1 flex flex-col">
+                {toolsByCategory(category).map((tool) => (
+                  <Link
+                    key={tool.slug}
+                    href={tool.href}
+                    onClick={() => setOpen(false)}
+                    className="rounded-lg px-2 py-3 text-base font-medium text-slate-800 hover:bg-slate-50"
+                  >
+                    {tool.title}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          ))}
 
           <div className="mt-4 flex flex-col border-t border-slate-100 pt-4">
+            <Link
+              href="/blog"
+              onClick={() => setOpen(false)}
+              className="rounded-lg px-2 py-3 text-base font-medium text-slate-800 hover:bg-slate-50"
+            >
+              Blog
+            </Link>
             <Link
               href="/about"
               onClick={() => setOpen(false)}

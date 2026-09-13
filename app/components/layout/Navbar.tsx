@@ -1,6 +1,6 @@
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
-import { tools } from "@/lib/tools";
+import { toolCategories, toolsByCategory } from "@/lib/tools";
 
 export default function Navbar() {
   return (
@@ -20,18 +20,30 @@ export default function Navbar() {
             <button className="flex items-center gap-1 hover:text-blue-600">
               Tools
             </button>
-            <div className="invisible absolute left-0 top-full w-56 rounded-xl border border-slate-200 bg-white p-2 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100">
-              {tools.map((tool) => (
-                <Link
-                  key={tool.slug}
-                  href={tool.href}
-                  className="block rounded-lg px-3 py-2 text-sm hover:bg-slate-50 hover:text-blue-600"
-                >
-                  {tool.title}
-                </Link>
+            <div className="invisible absolute left-0 top-full grid w-[560px] grid-cols-4 gap-4 rounded-xl border border-slate-200 bg-white p-4 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100">
+              {toolCategories.map((category) => (
+                <div key={category}>
+                  <p className="px-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
+                    {category}
+                  </p>
+                  <div className="mt-1">
+                    {toolsByCategory(category).map((tool) => (
+                      <Link
+                        key={tool.slug}
+                        href={tool.href}
+                        className="block rounded-lg px-2 py-1.5 text-sm hover:bg-slate-50 hover:text-blue-600"
+                      >
+                        {tool.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
+          <Link href="/blog" className="hover:text-blue-600">
+            Blog
+          </Link>
           <Link href="/about" className="hover:text-blue-600">
             About
           </Link>

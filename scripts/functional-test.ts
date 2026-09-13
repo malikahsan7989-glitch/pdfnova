@@ -3,6 +3,10 @@ import { mergePdfs } from "../lib/pdf/merge";
 import { getPdfPageCount, extractPages, splitEveryPage } from "../lib/pdf/split";
 import { compressPdf } from "../lib/pdf/compress";
 import { imagesToPdf } from "../lib/pdf/jpgToPdf";
+import { rotatePages } from "../lib/pdf/rotate";
+import { deletePages } from "../lib/pdf/deletePages";
+import { addWatermark } from "../lib/pdf/watermark";
+import { addPageNumbers } from "../lib/pdf/pageNumbers";
 import {
   validatePdfFile,
   validateImageFile,
@@ -193,6 +197,59 @@ async function main() {
       const big = new Uint8Array(21 * 1024 * 1024); // 21MB > 20MB limit
       validateImageFile(toFile(big, "huge.jpg", "image/jpeg"));
     });
+  }
+
+  console.log("\n=== Rotate PDF ===");
+  {
+    const bytes = await makeSamplePdfBytes(3, "R");
+    const file = toFile(bytes, "rotate-me.pdf", "application/pdf");
+    const rotated = await rotatePages(file, { 1: 90, 3: 180 });
+    const doc = await PDFDocument.load(rotated);
+    check("rotate: page 1 rotated by 90", doc.getPage(0).getRotation().angle === 90);
+    check("rotate: page 2 untouched", doc.getPage(1).getRotation().angle === 0);
+    check("rotate: page 3 rotated by 180", doc.getPage(2).getRotation().angle === 180);
+    check("rotate: page count unchanged", doc.getPageCount() === 3);
+  }
+
+  console.log("\n=== Delete PDF Pages ===");
+  {
+    const bytes = await makeSamplePdfBytes(5, "D");
+    const file = toFile(bytes, "delete-me.pdf", "application/pdf");
+    const result = await deletePages(file, [2, 4]);
+    const doc = await PDFDocument.load(result);
+    check("delete: removes correct number of pages", doc.getPageCount() === 3, `got ${doc.getPageCount()}`);
+
+    await expectThrow("delete: refuses to delete every page", async () => {
+      await deletePages(file, [1, 2, 3, 4, 5]);
+    });
+  }
+
+  console.log("\n=== Watermark PDF ===");
+  {
+    const bytes = await makeSamplePdfBytes(2, "W");
+    const file = toFile(bytes, "watermark-me.pdf", "application/pdf");
+    const result = await addWatermark(file, {
+      text: "CONFIDENTIAL",
+      position: "diagonal",
+      opacity: 0.3,
+      fontSize: 48,
+    });
+    const doc = await PDFDocument.load(result);
+    check("watermark: produces valid PDF", doc.getPageCount() === 2);
+
+    await expectThrow("watermark: invalid PDF throws", async () => {
+      const corrupt = toFile(new TextEncoder().encode("garbage"), "bad.pdf", "application/pdf");
+      await addWatermark(corrupt, { text: "X", position: "center", opacity: 0.3, fontSize: 24 });
+    });
+  }
+
+  console.log("\n=== PDF Page Numbering ===");
+  {
+    const bytes = await makeSamplePdfBytes(3, "N");
+    const file = toFile(bytes, "number-me.pdf", "application/pdf");
+    const result = await addPageNumbers(file, { position: "bottom-center", startNumber: 5 });
+    const doc = await PDFDocument.load(result);
+    check("page-numbers: produces valid PDF with same page count", doc.getPageCount() === 3);
   }
 
   console.log(`\n${passCount} passed, ${failCount} failed`);
