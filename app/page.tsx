@@ -11,12 +11,12 @@ import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 export const metadata: Metadata = {
   title: `${SITE_NAME} — ${SITE_TAGLINE}`,
   description:
-    "Free online PDF tools that run in your browser: merge, split, compress PDFs, and convert between PDF and JPG. No upload, no signup required.",
+    "A growing collection of free online PDF tools that run in your browser: organize, convert, compress, and edit PDFs. No upload, no signup required.",
   alternates: { canonical: "/" },
   openGraph: {
     title: `${SITE_NAME} — ${SITE_TAGLINE}`,
     description:
-      "Merge, split, compress, and convert PDF files quickly and privately, right in your browser.",
+      "Organize, convert, compress, and edit your PDF files quickly and privately, right in your browser.",
     url: "/",
     siteName: SITE_NAME,
     type: "website",
