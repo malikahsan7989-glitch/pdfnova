@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Foldryn",
   description:
-    "Foldryn is a small set of free, browser-based PDF tools built to make everyday PDF tasks fast and simple.",
+    "Foldryn is a growing collection of free, browser-based PDF tools built to make everyday PDF tasks fast and simple.",
   alternates: { canonical: "/about" },
 };
 
@@ -15,10 +15,12 @@ export default function AboutPage() {
 
         <div className="mt-6 space-y-5 text-slate-600 leading-7">
           <p>
-            Foldryn is a small set of focused, free PDF tools: merging,
-            splitting, compressing, and converting between PDF and JPG.
-            The goal is simple — make everyday PDF tasks fast, without
-            clutter, accounts, or unnecessary uploads.
+            Foldryn is a growing collection of free, focused PDF tools —
+            covering organizing pages, converting between formats,
+            compressing file size, and editing PDFs with things like
+            watermarks and page numbers. The goal is simple — make everyday
+            PDF tasks fast, without clutter, accounts, or unnecessary
+            uploads.
           </p>
           <p>
             Wherever technically possible, Foldryn processes your files
@@ -28,9 +30,8 @@ export default function AboutPage() {
             whether it works this way.
           </p>
           <p>
-            Foldryn is under active development. We&apos;re currently
-            focused on getting five core tools right — Merge, Split,
-            Compress, PDF to JPG, and JPG to PDF — before expanding further.
+            Foldryn is under active development, with new tools added over
+            time as the collection grows.
           </p>
           <p>
             Have feedback or run into an issue? Visit our{" "}
