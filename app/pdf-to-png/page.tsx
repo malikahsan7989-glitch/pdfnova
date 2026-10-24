@@ -58,6 +58,10 @@ export default function PdfToPngPage() {
       ]}
       relatedGuides={[
         {
+          title: "How to Convert PDF Pages to PNG Images (and When PNG Beats JPG)",
+          href: "/blog/how-to-convert-pdf-to-png",
+        },
+        {
           title: "PDF vs. JPG: Which Format Should You Use for Documents and Images?",
           href: "/blog/pdf-vs-jpg-which-format-to-use",
         },

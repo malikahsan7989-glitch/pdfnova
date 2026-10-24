@@ -58,6 +58,10 @@ export default function WatermarkPdfPage() {
       ]}
       relatedGuides={[
         {
+          title: "How to Add a Watermark to a PDF (and Why It's Smart for ID Copies)",
+          href: "/blog/how-to-add-watermark-to-pdf",
+        },
+        {
           title: "Why Browser-Based Local PDF Processing Is Safer Than Cloud Converters",
           href: "/blog/browser-based-pdf-processing-vs-cloud-converters",
         },

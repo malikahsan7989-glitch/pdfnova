@@ -58,6 +58,10 @@ export default function RotatePdfPage() {
       ]}
       relatedGuides={[
         {
+          title: "How to Rotate Pages in a PDF (and Fix Sideways Scans)",
+          href: "/blog/how-to-rotate-pdf-pages",
+        },
+        {
           title: "How to Split and Extract Specific Pages From Large PDF Documents",
           href: "/blog/how-to-split-extract-pages-from-pdf",
         },

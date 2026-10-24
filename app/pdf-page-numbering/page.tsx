@@ -58,6 +58,10 @@ export default function PdfPageNumberingPage() {
       ]}
       relatedGuides={[
         {
+          title: "How to Add Page Numbers to a PDF (and Leave the Cover Page Blank)",
+          href: "/blog/how-to-add-page-numbers-to-pdf",
+        },
+        {
           title: "How to Combine Multiple Scanned Receipts and Documents into One PDF",
           href: "/blog/combine-scanned-receipts-into-one-pdf",
         },

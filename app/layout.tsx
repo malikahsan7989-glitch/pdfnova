@@ -1,8 +1,7 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-import { SITE_URL, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,42 +14,26 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const viewport: Viewport = {
-  themeColor: "#2563eb",
-  colorScheme: "light",
-};
+const siteUrl = "https://foldryn.com";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL(siteUrl),
   title: {
-    default: `${SITE_NAME} — ${SITE_TAGLINE}`,
-    template: `%s`,
+    default: "Foldryn — Simple PDF Tools That Work in Your Browser",
+    template: "%s",
   },
   description:
     "Free online PDF tools that run in your browser. Merge, split, compress, and convert PDF files quickly, with no upload and no signup required.",
-  alternates: {
-    canonical: "/",
-  },
-  manifest: "/manifest.webmanifest",
   openGraph: {
-    siteName: SITE_NAME,
+    siteName: "Foldryn",
     type: "website",
-    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"

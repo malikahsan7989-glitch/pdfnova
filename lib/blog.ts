@@ -310,6 +310,453 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "how-to-rotate-pdf-pages",
+    title: "How to Rotate Pages in a PDF (and Fix Sideways Scans)",
+    description:
+      "Scanned a document and ended up with a page lying on its side? Here's how to turn just the bad pages the right way up without redoing the whole scan.",
+    date: "2026-10-23",
+    readingTime: "4 min read",
+    blocks: [
+      {
+        type: "p",
+        text: "You scan a signed form with your phone, attach it to an email, and hit send. Ten minutes later someone writes back: “Page two is upside down.” It's a small thing, but it looks careless, and re-scanning everything just to fix one page is a pain. You don't have to. A sideways page can be turned in a few clicks.",
+      },
+      { type: "h2", text: "Why pages end up sideways" },
+      {
+        type: "p",
+        text: "Usually it comes down to how the page was fed or held. Phone scanning apps guess the orientation from the way you tilted the phone, and they get it wrong more often than you'd expect, especially with landscape pages like tables or certificates. Sheet-fed scanners do the same thing when a few sheets go in the wrong way round. And if you've merged documents from different sources, one landscape page hiding in a stack of portrait ones is almost guaranteed.",
+      },
+      {
+        type: "p",
+        text: "None of this means the scan is bad. The content is fine. The page just needs turning.",
+      },
+      { type: "h2", text: "How to rotate only the pages that need it" },
+      {
+        type: "ol",
+        items: [
+          "Open [Rotate PDF](/rotate-pdf) and drop in your file. It shows a small preview of every page, which can take a few seconds on a long document.",
+          "Click the thumbnails of the pages that look wrong. Selected pages get a blue outline and a tick.",
+          "Press Rotate Left or Rotate Right. The preview turns straight away, so you can see whether the page is upright before you commit. Click again if it needs another quarter turn.",
+          "When every thumbnail looks right, press Apply Rotation, then use the Download button to save the new file.",
+        ],
+      },
+      {
+        type: "p",
+        text: "One honest limitation: there's no select-all button yet. If every page of a 40-page document is sideways, you'll be clicking through them one by one, and at that point it's often quicker to re-scan with the phone held the other way.",
+      },
+      { type: "h2", text: "Does rotating hurt the quality?" },
+      {
+        type: "p",
+        text: "No. Rotating doesn't redraw the page or squash it into a new image. It changes a setting inside the PDF that tells viewers which way up the page should be shown. The text, images and fonts stay exactly as they were, so a sharp scan stays sharp.",
+      },
+      { type: "h2", text: "A few habits that save you trouble" },
+      {
+        type: "ul",
+        items: [
+          "**Rotate first, everything else after.** If you plan to [merge](/merge-pdf) several files or [add page numbers](/pdf-page-numbering) later, fix the orientation before that. Numbers added to a sideways page end up sideways too.",
+          "**Scroll through the result** before you send it. It takes thirty seconds and catches the one page you missed.",
+          "**Keep the original.** The tool never touches your source file, but it's still smart to hang on to the untouched scan.",
+          "**Mixed orientations are normal.** A landscape page in a portrait document is fine. Only rotate it if it's actually lying on its side.",
+        ],
+      },
+      { type: "h2", text: "When rotating isn't the right fix" },
+      {
+        type: "p",
+        text: "Rotation works in quarter turns, which is perfect for a page that's on its side or upside down. It can't straighten a page that was scanned at a slight angle. If your text runs a few degrees off level, the better fix is a fresh scan with the paper lying flat and the phone held directly above it.",
+      },
+      {
+        type: "p",
+        text: "A couple of scanning habits make this problem rarer. Hold the phone in the same orientation as the page: landscape for a wide page, portrait for a tall one. Use even light so the scanning app can find the page edges properly. And take a quick look at the preview before you save, because it's much easier to retake one photo on the spot than to fix a whole batch later.",
+      },
+      { type: "h2", text: "What about privacy?" },
+      {
+        type: "p",
+        text: "Scans tend to be the sensitive kind of document: ID cards, signed contracts, medical forms. Everything here runs inside your browser tab. Your file is read on your device, rotated there, and handed back to you. It isn't uploaded to a server along the way, which is a good reason to prefer a browser-based tool over a random online converter for this job.",
+      },
+      {
+        type: "p",
+        text: "A sideways page looks like a bigger problem than it is. Select it, turn it, download, and you're done in about a minute.",
+      },
+    ],
+  },
+  {
+    slug: "how-to-delete-pages-from-pdf",
+    title: "How to Delete Pages From a PDF (Blank Pages, Cover Sheets and Duplicates)",
+    description:
+      "Need to drop a few pages from a PDF? Here's how to remove them visually, and what to do when the page you're removing is sensitive.",
+    date: "2026-10-23",
+    readingTime: "4 min read",
+    blocks: [
+      {
+        type: "p",
+        text: "Almost every long PDF has a page or two that shouldn't be there. A blank sheet from double-sided scanning. A fax cover page. The same invoice scanned twice. Sending the file as it is looks sloppy, and opening a heavyweight editor just to remove one page feels like overkill. You can do it right in the browser by looking at the pages and clicking the ones you want gone.",
+      },
+      { type: "h2", text: "Common reasons to remove pages" },
+      {
+        type: "ul",
+        items: [
+          "Blank pages that appear when you scan both sides of a sheet that only has printing on one.",
+          "Cover sheets, separator pages, or old terms and conditions someone stuck on the front.",
+          "Duplicate pages, usually from scanning the same document twice.",
+          "Pages with personal details the recipient doesn't need to see.",
+        ],
+      },
+      { type: "h2", text: "How to do it" },
+      {
+        type: "ol",
+        items: [
+          "Go to [Delete PDF Pages](/delete-pdf-pages) and drop in your file. Page previews load first, so you can see what you're about to remove.",
+          "Click each page you want gone. Pages marked for deletion get a red outline, and the button at the bottom keeps count, for example Delete 3 Pages.",
+          "Press the button, then use Download to save the edited file.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The tool won't let you delete every page. A PDF with zero pages isn't a valid file, so at least one has to stay. If you hit that message, you've probably selected the pages you want to keep instead of the ones you want to lose. Your original file isn't changed either. You always get a new copy.",
+      },
+      { type: "h2", text: "A realistic example" },
+      {
+        type: "p",
+        text: "Say you scanned a twelve-page rental pack on a scanner that insists on capturing the back of every sheet. You end up with six real pages and six blank ones in between. Open the file in the tool and the blank ones are easy to spot, since they show up as plain white thumbnails. Click those six, press delete, and you're left with a tidy six-page document.",
+      },
+      {
+        type: "p",
+        text: "One small warning with scans: a page that looks blank at thumbnail size sometimes isn't. A faint footer, a page number, or a line saying “this page intentionally left blank” can matter to the person reading it. If you're unsure about a page, check it in your PDF viewer before you remove it.",
+      },
+      { type: "h2", text: "Delete or extract: which is faster?" },
+      {
+        type: "p",
+        text: "It depends on which group is smaller. Removing two pages from a forty-page document? Deleting is quicker. Need only three pages out of those forty? Picking those three with [Extract PDF Pages](/extract-pdf-pages) is quicker. Same result, fewer clicks. And if you'd rather type page numbers than click thumbnails, [Split PDF](/split-pdf) accepts ranges like 1,3,5-8.",
+      },
+      { type: "h2", text: "If the page you're removing is sensitive" },
+      {
+        type: "p",
+        text: "This part matters. Taking a page out of view isn't the same as scrubbing it from the file. When you delete a page with this tool, it disappears from the document and from every PDF viewer, but the page's content can still be sitting inside the file as unused data. We tested this with a sample PDF, and the removed page's text was still present in the saved file even though no viewer showed it. For a spare cover sheet, that doesn't matter. For a page with account numbers, an ID scan, or anything you really don't want to leak, don't rely on deletion alone.",
+      },
+      {
+        type: "p",
+        text: "The safer habit is to copy the pages you want to keep into a brand-new document. [Extract PDF Pages](/extract-pdf-pages) does exactly that: it builds a fresh file from only the pages you pick, so the pages you left out don't come along.",
+      },
+      { type: "h2", text: "Quick tips" },
+      {
+        type: "ul",
+        items: [
+          "**Check page numbers before you start.** The number printed on a page often doesn't match its position in the PDF, which is why the thumbnails are handy.",
+          "**Scroll through the result** once to make sure nothing you needed went missing.",
+          "**Still too big?** Removing pages usually shrinks a file, but if it's still over a portal's limit, run it through [Compress PDF](/compress-pdf).",
+          "**Very long files:** the previews are drawn by your browser, so a several-hundred-page document can take a moment to load.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Everything happens locally in your browser, so the file you're trimming isn't uploaded anywhere. Select, delete, download. It really is that short.",
+      },
+    ],
+  },
+  {
+    slug: "how-to-add-watermark-to-pdf",
+    title: "How to Add a Watermark to a PDF (and Why It's Smart for ID Copies)",
+    description:
+      "A watermark can keep a copy of your ID or a draft contract from being reused or mistaken for the final version. Here's how to add one, and which settings work best.",
+    date: "2026-10-23",
+    readingTime: "4 min read",
+    blocks: [
+      {
+        type: "p",
+        text: "A watermark is just faint text across a page, and it's useful in more situations than people realize. Draft contracts that shouldn't be mistaken for the signed version. Confidential reports. And the one most people never think of: copies of your passport or ID that you're sending to a landlord, bank, or employer.",
+      },
+      { type: "h2", text: "Why watermark ID copies" },
+      {
+        type: "p",
+        text: "Once you send a scan of your ID, you've lost control of it. The recipient might store it for years, and if their system is ever breached, a clean copy of your document is exactly what someone else wants. A line like “For rental application only” across the middle of the page doesn't make reuse impossible, but it makes the copy less useful for anything other than its intended purpose. It's a small habit that costs about a minute.",
+      },
+      { type: "h2", text: "Adding one in Foldryn" },
+      {
+        type: "ol",
+        items: [
+          "Open [Watermark PDF](/watermark-pdf) and drop in your file.",
+          "Type your text. It's capped at 60 characters, so keep it short and clear.",
+          "Pick a position: center, top, bottom, or diagonal.",
+          "Adjust opacity and font size with the sliders, then press Apply Watermark.",
+          "Look over the result and use the Download button to save it.",
+        ],
+      },
+      {
+        type: "p",
+        text: "There's no live preview while you move the sliders, so the first result might not be quite what you pictured. That's fine. Your original file isn't touched, so you can go back, change the opacity or position, and try again until it looks right.",
+      },
+      { type: "h2", text: "Settings that work" },
+      {
+        type: "ul",
+        items: [
+          "**Diagonal at around 30% opacity.** The classic look. It's clearly visible, but the page underneath is still easy to read.",
+          "**Top or bottom** suits a status label like DRAFT or CONFIDENTIAL that shouldn't cover the content.",
+          "**Center with higher opacity** is the strongest choice for ID copies, since it sits over the important fields.",
+          "**Font size** runs from 16 to 96 points. Long text at a big size can run off the edge of the page, so shorten the text or lower the size if that happens.",
+        ],
+      },
+      { type: "h2", text: "What to know before you rely on it" },
+      {
+        type: "ul",
+        items: [
+          "**It's permanent.** The watermark is drawn onto the page, so keep your original file in case you need a clean version later.",
+          "**Text only, one line, one color.** The text is a medium gray, and it's placed once per page rather than tiled across it.",
+          "**Plain characters work best.** Standard letters, numbers and common punctuation are fine. Text in other writing systems, such as Arabic script or Chinese characters, may not work with the built-in font.",
+          "**It deters casual reuse. It isn't a security feature.** Someone with PDF editing software can sometimes cover, edit around or remove a watermark, and anyone can crop it out of a screenshot.",
+        ],
+      },
+      { type: "h2", text: "Wording that actually helps" },
+      {
+        type: "p",
+        text: "The words matter more than most people think. A vague stamp like COPY says very little. A specific one tells anyone who sees the page what it was meant for and when. A few examples that work:",
+      },
+      {
+        type: "ul",
+        items: [
+          "“For rental application only” on an ID or proof-of-address scan.",
+          "“Draft – not for signature” on a contract that's still being negotiated.",
+          "“Confidential – prepared for J. Smith” on a report you're sharing with one person.",
+          "“Sample” on a document you're showing as an example but don't want used as the real thing.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Adding a date helps too, since it shows how old the copy is. Just remember the 60-character limit, and keep the wording plain so it stays readable when it's printed in gray across a page.",
+      },
+      { type: "h2", text: "Do it last" },
+      {
+        type: "p",
+        text: "If you're also merging, rotating or numbering the file, watermark at the end. [Merge](/merge-pdf) first, straighten pages with [Rotate PDF](/rotate-pdf), add [page numbers](/pdf-page-numbering), and then stamp the finished document so the watermark lands correctly on every page.",
+      },
+      {
+        type: "p",
+        text: "Because everything runs in your browser, the document you're protecting isn't uploaded anywhere while you add the watermark. That's a good fit for the kind of files that need one in the first place.",
+      },
+    ],
+  },
+  {
+    slug: "how-to-convert-pdf-to-png",
+    title: "How to Convert PDF Pages to PNG Images (and When PNG Beats JPG)",
+    description:
+      "Turn each page of a PDF into a PNG image right in your browser. Here's how it works, what changes when text becomes pixels, and when JPG is the better choice.",
+    date: "2026-10-23",
+    readingTime: "4 min read",
+    blocks: [
+      {
+        type: "p",
+        text: "Sometimes a PDF is the wrong container for what you need. You want a single page as a picture to drop into a slide, a help article or a chat message. PNG is a good fit for that, especially for pages with text, charts or diagrams, because it keeps edges clean. Here's how to get there, and what you give up on the way.",
+      },
+      { type: "h2", text: "How to convert a PDF to PNG" },
+      {
+        type: "ol",
+        items: [
+          "Open [PDF to PNG](/pdf-to-png) and drop in your PDF. Files up to 50 MB are accepted.",
+          "Press Convert to PNG. Every page is drawn in your browser, so longer documents take a little longer.",
+          "Use the Download button when it appears. A one-page PDF gives you a single PNG. Anything longer comes as a ZIP with one image per page, named page-1, page-2 and so on.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Nothing downloads on its own, and nothing is uploaded. The pages are rendered on your device, and your original PDF stays exactly as it was.",
+      },
+      { type: "h2", text: "What changes when a page becomes an image" },
+      {
+        type: "p",
+        text: "This is the part people tend to find out the hard way. In a PDF, text is text: you can select it, search it and copy it, and it stays sharp at any zoom level. Once a page is converted to PNG, it's a grid of pixels. The words look the same on screen, but you can no longer select or search them, links on the page stop working, and zooming in far enough will eventually show the pixels.",
+      },
+      {
+        type: "p",
+        text: "So if you still need to copy text out of the document, or the recipient expects a proper document, keep it as a PDF. If you only need a page to look right somewhere else, an image is fine.",
+      },
+      { type: "h2", text: "PNG or JPG?" },
+      {
+        type: "p",
+        text: "JPG makes files small by discarding detail your eye probably won't miss. That's ideal for photographs, but it can leave faint smudges around small text and thin lines. PNG keeps every pixel, so letters and lines stay crisp, and the files come out bigger.",
+      },
+      {
+        type: "ul",
+        items: [
+          "**Text, forms, charts and diagrams:** PNG.",
+          "**Photo-heavy pages:** JPG. The difference in sharpness is hard to see and the file is much smaller.",
+          "**Email attachments or upload forms with a size limit:** usually JPG, using [PDF to JPG](/pdf-to-jpg).",
+          "**Images you'll edit or screenshot again later:** PNG, since there's no compression loss to pile up.",
+        ],
+      },
+      { type: "h2", text: "Details worth knowing" },
+      {
+        type: "ul",
+        items: [
+          "**The background is white, not transparent.** PNG can hold transparency, but pages are drawn the way they look on screen, on a white page.",
+          "**There's no quality setting for PNG.** Pages are rendered at about double their normal on-screen size. The PDF to JPG tool currently has a High option that renders larger than that, so for a very large, detailed image, High JPG can actually give you more pixels.",
+          "**Both formats open almost everywhere,** including Word, PowerPoint and Google Slides, so compatibility rarely decides the choice.",
+        ],
+      },
+      { type: "h2", text: "Watch out for big files" },
+      {
+        type: "p",
+        text: "A 30-page document as PNGs can turn into a large ZIP, and drawing that many pages uses your browser's memory. If you only need a few pages, pick them first with [Extract PDF Pages](/extract-pdf-pages) and convert the smaller file. It's faster and lighter on your device.",
+      },
+      {
+        type: "p",
+        text: "If you're still deciding between document and image formats in general, the guide on [PDF vs. JPG](/blog/pdf-vs-jpg-which-format-to-use) covers when each one makes sense. For converting pages, the quick test is simple: convert one page, zoom in on some text, and see whether you can live with the result.",
+      },
+    ],
+  },
+  {
+    slug: "how-to-add-page-numbers-to-pdf",
+    title: "How to Add Page Numbers to a PDF (and Leave the Cover Page Blank)",
+    description:
+      "Page numbers make long PDFs easier to read, reference and print. Here's how to add them, how to start from any number, and a workaround for skipping the cover.",
+    date: "2026-10-23",
+    readingTime: "4 min read",
+    blocks: [
+      {
+        type: "p",
+        text: "Try discussing a 60-page document over the phone without page numbers. “It's somewhere in the middle, after the table.” Numbers are one of those small details that nobody notices when they're there and everybody misses when they're not. Theses, contracts, reports and merged document packs all read better with them, and adding them takes about a minute.",
+      },
+      { type: "h2", text: "How to add them" },
+      {
+        type: "ol",
+        items: [
+          "Open [PDF Page Numbering](/pdf-page-numbering) and drop in your file.",
+          "Choose where the numbers go: top or bottom, and left, center or right. That's six positions in total.",
+          "Set the number the first page should start from. Any whole number from 0 up works.",
+          "Press Add Page Numbers, then use the Download button to save the new file.",
+        ],
+      },
+      { type: "h2", text: "Which position should you pick?" },
+      {
+        type: "p",
+        text: "Bottom center is the safe default for most documents, and it's what you'll see in reports and letters. If you plan to print double-sided and bind the pages, outer corners are the traditional choice: bottom right works well for right-hand pages. And if your PDF already has footer text, such as a company name or a confidentiality line, try the top of the page instead so the number doesn't collide with it.",
+      },
+      { type: "h2", text: "Starting from a number other than 1" },
+      {
+        type: "p",
+        text: "This is handy when a document continues from an earlier section. If chapter one runs to page 24, you can number chapter two from 25 and combine them later without a numbering clash. It's also what makes the cover page trick below possible.",
+      },
+      { type: "h2", text: "How to skip the cover page" },
+      {
+        type: "p",
+        text: "The tool numbers every page, so there's no option to leave the first one blank. There's an easy workaround, though, using tools you already have:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Use [Extract PDF Pages](/extract-pdf-pages) to pull out every page except the cover and save the result as a new file. Then extract the cover on its own the same way.",
+          "Run the file without the cover through the numbering tool and set the start number to 2, so its first page is labeled 2.",
+          "[Merge](/merge-pdf) the untouched cover in front of the numbered file.",
+        ],
+      },
+      {
+        type: "p",
+        text: "It's a few extra steps, but the result looks like a document that was numbered properly in a word processor.",
+      },
+      { type: "h2", text: "Do it in the right order" },
+      {
+        type: "ul",
+        items: [
+          "**Merge first, number second.** If you number each file and then merge them, every part restarts at 1. Combine everything with [Merge PDF](/merge-pdf) and number the finished document once.",
+          "**Fix rotation before numbering.** A number stamped on a sideways page ends up sideways. Use [Rotate PDF](/rotate-pdf) first.",
+          "**Remove unwanted pages beforehand** with [Delete PDF Pages](/delete-pdf-pages), otherwise your numbering will have gaps or confusing jumps.",
+          "**Always start from the un-numbered original.** Number a file twice by mistake and every page ends up with two numbers stacked on top of each other.",
+          "**Check the file size afterward.** Numbering adds almost nothing, but if a merged document is still large, [Compress PDF](/compress-pdf) can sometimes shrink it.",
+        ],
+      },
+      { type: "h2", text: "Will it print properly?" },
+      {
+        type: "p",
+        text: "The number sits about 28 points from the edge of the page, which is roughly one centimeter. That's inside the area most office printers can reach, so it shouldn't get clipped. If you're sending the file to a print shop that trims pages, ask them how much margin they need, and use the top or bottom position that gives you more room.",
+      },
+      {
+        type: "p",
+        text: "Scanned documents work fine too. The number is added on top of the scanned page image, so it doesn't matter whether the PDF contains real text or just pictures of pages.",
+      },
+      { type: "h2", text: "What you can't change" },
+      {
+        type: "p",
+        text: "To keep things simple, the numbers are small, dark gray, and plain: just the digit, with no “Page 3 of 20” format, and no choice of font or size. Check the result by scrolling through it, especially pages with busy margins, to make sure nothing overlaps.",
+      },
+      {
+        type: "p",
+        text: "As with everything else on Foldryn, this runs in your browser, so your document isn't uploaded while the numbers are added.",
+      },
+    ],
+  },
+  {
+    slug: "how-to-merge-pdf-files-in-order",
+    title: "How to Merge PDF Files in the Right Order (Without Mixing Up Pages)",
+    description:
+      "Merging PDFs is easy, but getting them in the right order takes care. Here's how to arrange files, check the result, and handle pages that need to interleave.",
+    date: "2026-10-23",
+    readingTime: "4 min read",
+    blocks: [
+      {
+        type: "p",
+        text: "Combining PDFs takes a few seconds. The part that goes wrong is the order. The appendix lands before the cover letter, the signature page ends up first, and nobody notices until the document has already been sent. A small amount of care before you press the button avoids all of it.",
+      },
+      { type: "h2", text: "How the order works" },
+      {
+        type: "p",
+        text: "[Merge PDF](/merge-pdf) joins your files in the order they appear in its list, top to bottom. Each file keeps its own pages in their original sequence, so file one's pages come first, then file two's, and so on. The list is numbered, which makes it easy to read the final order at a glance.",
+      },
+      {
+        type: "ol",
+        items: [
+          "Drop in two or more PDFs. Each one is added to the list.",
+          "Read the numbered list and compare it to the order you want.",
+          "Use the up arrow next to a file to move it one place higher. Use the X to remove a file you added by mistake.",
+          "Press Merge PDFs, then use the Download button to save the combined file.",
+        ],
+      },
+      { type: "h2", text: "Moving a file down" },
+      {
+        type: "p",
+        text: "There's only an up arrow, no down arrow, so the trick is to think the other way around. To push file two below file three, move file three up one place instead. Same result, one click.",
+      },
+      {
+        type: "p",
+        text: "Two quirks are worth knowing. Files you add later are placed at the end of the list, not where you might expect. And if you change the order after merging, the earlier result is cleared, so you need to press Merge PDFs again before downloading.",
+      },
+      { type: "h2", text: "Set the order before you upload" },
+      {
+        type: "p",
+        text: "The easiest way to get the order right is to fix it in the file names first. Add a number to the start of each name: 01-cover-letter, 02-application-form, 03-references. When you select several files at once, your computer will often hand them over in name order, which means the list comes out right from the start. Often isn't always, though, so still read the numbered list before merging.",
+      },
+      { type: "h2", text: "When pages need to interleave" },
+      {
+        type: "p",
+        text: "Merging works on whole files. It can't slip one page from file A into the middle of file B. If you need that, split the second file first. Say you want a signed page from file A to sit between page 3 and page 4 of file B:",
+      },
+      {
+        type: "ol",
+        items: [
+          "Use [Split PDF](/split-pdf) on file B to extract pages 1-3 into one file, then extract the rest into another.",
+          "Do the same to pull the signed page out of file A if it's part of a longer document.",
+          "Merge the pieces in this order: first part of B, the signed page, rest of B.",
+        ],
+      },
+      {
+        type: "p",
+        text: "It's a few extra steps, but it works with the tools you already have. The guide on [splitting and extracting pages](/blog/how-to-split-extract-pages-from-pdf) walks through the page-range format.",
+      },
+      { type: "h2", text: "Check the result before you send it" },
+      {
+        type: "ul",
+        items: [
+          "Scroll through the merged file once. You're checking that each section starts where you expect, not reading every page.",
+          "Look for sideways pages. A page that was fine on its own can look wrong in a combined document, and [Rotate PDF](/rotate-pdf) fixes it quickly.",
+          "Number the pages last. If you want a continuous sequence, merge first and then use [PDF Page Numbering](/pdf-page-numbering), otherwise each file restarts at 1.",
+          "Keep your source files. Merging creates a new document and leaves the originals alone, so you can always redo it in a different order.",
+        ],
+      },
+      { type: "h2", text: "What merging doesn't carry over" },
+      {
+        type: "p",
+        text: "Merging copies the pages themselves. Extras attached to the original files, such as bookmarks or interactive form fields, may not make it into the combined document, so check anything like that in the result. Each file also needs to be under 50 MB, and very large combinations depend on your device's memory because the work happens in your browser.",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

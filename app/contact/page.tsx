@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
+// TODO: replace with your real support inbox before launch.
 const CONTACT_EMAIL = "support@foldryn.com";
 
 export default function ContactPage() {

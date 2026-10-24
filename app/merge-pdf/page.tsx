@@ -58,6 +58,10 @@ export default function MergePdfPage() {
       ]}
       relatedGuides={[
         {
+          title: "How to Merge PDF Files in the Right Order (Without Mixing Up Pages)",
+          href: "/blog/how-to-merge-pdf-files-in-order",
+        },
+        {
           title: "How to Combine Multiple Scanned Receipts and Documents into One PDF",
           href: "/blog/combine-scanned-receipts-into-one-pdf",
         },

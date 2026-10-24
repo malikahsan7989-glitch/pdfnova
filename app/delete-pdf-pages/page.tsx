@@ -58,6 +58,10 @@ export default function DeletePdfPagesPage() {
       ]}
       relatedGuides={[
         {
+          title: "How to Delete Pages From a PDF (Blank Pages, Cover Sheets and Duplicates)",
+          href: "/blog/how-to-delete-pages-from-pdf",
+        },
+        {
           title: "How to Split and Extract Specific Pages From Large PDF Documents",
           href: "/blog/how-to-split-extract-pages-from-pdf",
         },

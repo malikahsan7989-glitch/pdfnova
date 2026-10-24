@@ -5,20 +5,16 @@ export interface PageImageResult {
   blob: Blob;
 }
 
-export type ImageFormat = "jpeg" | "png";
-
 /**
- * Renders every page of a PDF file to an image Blob (JPG or PNG) using
- * PDF.js + a canvas. `scale` controls output resolution (2 ≈ good
- * print/zoom quality, 1 ≈ smaller/faster). `quality` only affects JPEG
- * output (PNG is always lossless).
+ * Renders every page of a PDF file to a JPG Blob using PDF.js + a canvas.
+ * `scale` controls output resolution (2 ≈ good print/zoom quality,
+ * 1 ≈ smaller/faster). `quality` is the JPEG encoder quality (0-1).
  */
-export async function renderPdfPagesToImage(
+export async function renderPdfPagesToJpg(
   file: File,
-  options: { format?: ImageFormat; scale?: number; quality?: number } = {}
+  options: { scale?: number; quality?: number } = {}
 ): Promise<PageImageResult[]> {
-  const { format = "jpeg", scale = 2, quality = 0.9 } = options;
-  const mimeType = format === "png" ? "image/png" : "image/jpeg";
+  const { scale = 2, quality = 0.9 } = options;
   const pdfjs = await getPdfJs();
 
   const arrayBuffer = await file.arrayBuffer();
@@ -41,11 +37,8 @@ export async function renderPdfPagesToImage(
         throw new Error("Canvas rendering is not supported in this browser.");
       }
 
-      // JPG has no transparency, so fill white first to avoid a black
-      // background on pages without one. PNG supports transparency, but
-      // filling white here matches what the page actually looks like when
-      // viewed normally, rather than producing a see-through PNG that
-      // looks wrong when placed on a dark background elsewhere.
+      // Fill white first - JPG has no transparency, and PDF pages without
+      // an explicit background would otherwise render as black.
       context.fillStyle = "#ffffff";
       context.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -53,9 +46,9 @@ export async function renderPdfPagesToImage(
 
       const blob: Blob = await new Promise((resolve, reject) => {
         canvas.toBlob(
-          (b) => (b ? resolve(b) : reject(new Error(`Failed to encode page as ${format.toUpperCase()}.`))),
-          mimeType,
-          format === "jpeg" ? quality : undefined
+          (b) => (b ? resolve(b) : reject(new Error("Failed to encode page as JPG."))),
+          "image/jpeg",
+          quality
         );
       });
 
@@ -70,15 +63,4 @@ export async function renderPdfPagesToImage(
   }
 
   return results;
-}
-
-/**
- * Kept for the existing PDF to JPG tool — unchanged behavior, now
- * implemented as a thin wrapper around the generalized renderer.
- */
-export async function renderPdfPagesToJpg(
-  file: File,
-  options: { scale?: number; quality?: number } = {}
-): Promise<PageImageResult[]> {
-  return renderPdfPagesToImage(file, { ...options, format: "jpeg" });
 }

@@ -14,10 +14,9 @@ export default function Hero() {
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-          Organize, convert, compress, and edit your PDF files — from merging
-          and splitting to rotating, watermarking, and more. Most tools
-          process your files locally in your browser — no upload, no signup,
-          no watermark added to your files.
+          Merge, split, compress, and convert your PDF files quickly. Most
+          tools process your files locally in your browser — no upload, no
+          signup, no watermark.
         </p>
 
         <Link
