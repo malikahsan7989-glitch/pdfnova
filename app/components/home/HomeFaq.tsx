@@ -1,7 +1,11 @@
+import JsonLd from "../shared/JsonLd";
+import { faqPageSchema } from "@/lib/structuredData";
+
 const faqs = [
   {
     question: "Is Foldryn free to use?",
-    answer: "Yes. All five core tools — Merge, Split, Compress, PDF to JPG, and JPG to PDF — are free to use.",
+    answer:
+      "Yes. Foldryn provides a growing collection of free, browser-based PDF tools — including tools for organizing, converting, optimizing, and editing PDFs — and every one of them is free to use.",
   },
   {
     question: "Do I need to create an account?",
@@ -10,7 +14,7 @@ const faqs = [
   {
     question: "Are my files uploaded to a server?",
     answer:
-      "For most tools, no — your file is processed entirely in your browser and never leaves your device. Each tool page states clearly whether it works this way.",
+      "No — every tool on Foldryn processes your file locally in your browser and never uploads it to a server. Each tool page also states this explicitly.",
   },
   {
     question: "What file size limits apply?",
@@ -20,8 +24,11 @@ const faqs = [
 ];
 
 export default function HomeFaq() {
+  const faqData = faqPageSchema(faqs);
+
   return (
     <section className="border-t border-slate-100 bg-slate-50 px-4 py-20 sm:px-6">
+      {faqData && <JsonLd data={faqData} />}
       <div className="mx-auto max-w-3xl">
         <h2 className="text-center text-3xl font-bold text-slate-900">
           Frequently Asked Questions
