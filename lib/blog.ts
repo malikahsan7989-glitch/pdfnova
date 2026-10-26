@@ -249,64 +249,142 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "how-to-split-extract-pages-from-pdf",
-    title: "How to Split and Extract Specific Pages From Large PDF Documents",
+    title: "How to Extract Pages From a PDF (Step by Step)",
     description:
-      "Whether you need one page out of a hundred-page report or want to break a document into individual files, here's how to do it cleanly.",
+      "Learn how to extract selected pages from a PDF and save them as a new file. Pick pages visually or type ranges like 1,3,5-8, right in your browser.",
     date: "2026-03-31",
-    readingTime: "5 min read",
+    readingTime: "6 min read",
     blocks: [
       {
         type: "p",
-        text: "Large PDFs are common — a full contract packet, a scanned book chapter, a government form bundle, or a lengthy report — but you rarely need the whole thing. More often, you need one section, a handful of specific pages, or want to break the file apart entirely so each page stands on its own. Doing this without the right tool usually means scrolling through a bloated PDF viewer or, worse, manually screenshotting pages. Here's a cleaner way to do it.",
+        text: "You have a 60-page PDF, but the person you're sending it to only needs pages 3 to 5. Or you want to keep one signed page from a long contract, or pull a single chapter out of a scanned book. Sending the whole file is clumsy, and it shares more than you meant to. What you want is to extract those pages into a new, smaller PDF.",
       },
-      { type: "h2", text: "Two Different Problems, Two Different Approaches" },
       {
         type: "p",
-        text: "\"Splitting a PDF\" actually covers two distinct needs, and it helps to know which one you have before you start:",
+        text: "The quickest way on Foldryn is the [Extract PDF Pages](/extract-pdf-pages) tool. You see a thumbnail of every page, click the ones you want, and download a new PDF that contains only those pages. If you'd rather type page numbers, [Split PDF](/split-pdf) does the same job with ranges like 1,3,5-8. Both run in your browser, and your original file isn't changed.",
       },
+      { type: "h2", text: "Two ways to extract pages from a PDF" },
       {
         type: "ul",
         items: [
-          "**Extracting specific pages** — you want pages 1, 3, and 5 through 8 out of a longer document, combined into one new, shorter PDF.",
-          "**Splitting every page apart** — you want each individual page of the document saved as its own separate PDF file.",
+          "**Pick pages visually** with [Extract PDF Pages](/extract-pdf-pages). This is best when you don't know the page numbers, or when the pages are easier to recognize by sight, like scans.",
+          "**Type page numbers** with the Extract pages option in [Split PDF](/split-pdf). This is best when you already know exactly which pages you need, especially in a long document where waiting for thumbnails is slow.",
         ],
       },
-      { type: "h2", text: "How to Extract Specific Pages" },
+      { type: "h2", text: "Method 1: Select the pages you want to keep" },
       {
         type: "p",
-        text: "Use [Split PDF](/split-pdf) and choose the **Extract pages** option. You'll be asked for a page range, using a simple format like `1,3,5-8` — meaning pages 1, 3, 5, 6, 7, and 8. Those pages are pulled out and combined into a single new PDF, in the order you specified, while everything else in the original document is left out.",
+        text: "Use this to save selected PDF pages as a new file without typing anything.",
       },
       {
         type: "ol",
         items: [
-          "Upload your PDF and note the total page count shown by the tool.",
-          "Choose **Extract pages** and enter the pages or ranges you need.",
-          "Process the file, then use the Download button to save your new, shorter PDF.",
+          "Open [Extract PDF Pages](/extract-pdf-pages) and choose your PDF, or drop it onto the page. Files up to 50 MB are accepted.",
+          "Wait for the page previews to load. Longer documents take a few seconds, because every page is drawn in your browser.",
+          "Click each page you want to keep. Selected pages get a blue outline and a tick, and the summary line shows how many you've picked.",
+          "Press the Extract button. It shows your count, for example Extract 3 Pages.",
+          "When the result is ready, press Download to save the new PDF.",
         ],
       },
-      { type: "h3", text: "A practical example" },
       {
         type: "p",
-        text: "Say you have a 40-page lease agreement, but your accountant only needs the signature page and the payment schedule — pages 1, 38, and 39. Entering `1,38,39` extracts exactly those three pages into one small PDF, instead of sending the entire 40-page document for three pages of relevant content.",
+        text: "The pages don't have to sit next to each other. You can pick 2, 7 and 15, and they'll end up in the new file in their original order, whichever one you clicked first.",
       },
-      { type: "h2", text: "How to Split Every Page Into Its Own File" },
+      { type: "h2", text: "Method 2: Type the page numbers" },
+      {
+        type: "ol",
+        items: [
+          "Open [Split PDF](/split-pdf) and choose your file. The tool shows how many pages it has.",
+          "Choose Extract pages and enter the pages you want in the Pages to extract box.",
+          "Press Split PDF, then use the Download button to save the result.",
+        ],
+      },
       {
         type: "p",
-        text: "If instead you need each page as a completely separate file — for example, uploading each page of a multi-page form to different fields in a system — choose **Split every page** instead. The tool breaks the document into one PDF per page. If there's more than one resulting file, they're automatically bundled into a single ZIP archive so you can download everything at once rather than one file at a time.",
+        text: "Separate pages with commas and use a dash for a range. A few examples:",
       },
-      { type: "h2", text: "Tips for Working With Large Documents" },
       {
         type: "ul",
         items: [
-          "**Note the page numbers before you start.** Open the PDF once in a normal viewer to confirm exactly which page numbers you need — page numbers printed inside the document don't always match the PDF's actual page order.",
-          "**Double-check ranges for typos.** A range like `5-8` extracts pages 5 through 8 inclusive; a stray comma or dash in the wrong place will throw a validation error rather than silently doing the wrong thing, so re-check if you see one.",
-          "**Recombine later if needed.** If you extract pages from several different documents and want them in one final file, [Merge PDF](/merge-pdf) can combine the resulting PDFs back into a single document, in whatever order you choose.",
-          "**Watch the file size on very large source PDFs.** Extremely long documents (hundreds of pages, or large embedded images) rely on your browser's available memory to process, so extracting a smaller subset of pages is generally faster and more reliable than processing an enormous file for a large split.",
+          "**3** gives you only page 3.",
+          "**2-4** gives you pages 2, 3 and 4.",
+          "**1,3,5-8** gives you pages 1, 3, 5, 6, 7 and 8.",
+          "**1,38,39** is handy for a 40-page lease: the first page, plus the signature and payment pages near the end.",
         ],
       },
       {
         type: "p",
-        text: "Splitting a PDF the right way comes down to picking the correct mode for what you actually need — a smaller extracted document, or a full set of individual pages — and getting your page numbers right before you run it. Once you know the difference, it's a task that takes seconds rather than minutes of manual scrolling and screenshotting.",
+        text: "Two details are worth knowing. The pages always come out in ascending order, so typing 8,1,3 gives you pages 1, 3 and 8, and a page you list twice is only included once. And if something is wrong, such as a range written backwards (5-2) or a page number higher than the document's page count, the tool shows an error message instead of guessing what you meant.",
+      },
+      { type: "h2", text: "Which method should you use?" },
+      {
+        type: "p",
+        text: "If you can picture the pages but can't remember their numbers, use the visual picker. If you have the numbers in front of you, typing them is faster, and for very long files it also saves waiting for hundreds of thumbnails to draw. Either way you end up with the same kind of result: one new PDF with the pages you chose.",
+      },
+      { type: "h2", text: "Practical examples" },
+      {
+        type: "ul",
+        items: [
+          "**One signed page from a contract.** Open the visual picker, click only the signature page, and save it. You can send it on without the rest of the agreement.",
+          "**A chapter from a scanned book.** If chapter 4 runs from page 61 to page 78, type 61-78 in Split PDF.",
+          "**Only the relevant pages of a report.** Pick the summary and the two tables someone asked for, and leave out the appendix.",
+          "**Pages from several files.** Extract what you need from each file, then combine the results with [Merge PDF](/merge-pdf).",
+        ],
+      },
+      { type: "h2", text: "If you need every page as its own file" },
+      {
+        type: "p",
+        text: "Sometimes you don't want a selection at all. You want each page saved separately, for example to upload each page of a form into a different field. Choose Split every page in [Split PDF](/split-pdf). One PDF is created per page, and when there is more than one, they're bundled into a single ZIP file so you can download them together.",
+      },
+      { type: "h2", text: "Tips and common mistakes" },
+      {
+        type: "ul",
+        items: [
+          "**Printed page numbers and PDF page numbers can differ.** A report might call its first chapter page 1, while the PDF also counts the cover and contents pages. The tools use the PDF's own page position, which is where thumbnails help.",
+          "**Check the result before you send it.** Scroll through the new file once to confirm you have the right pages.",
+          "**Keep your original.** Extracting creates a new file. Your source PDF isn't modified.",
+          "**Keeping most pages and dropping a few?** [Delete PDF Pages](/delete-pdf-pages) takes fewer clicks.",
+          "**Still too big for an upload limit?** Run the extracted file through [Compress PDF](/compress-pdf).",
+        ],
+      },
+      { type: "h2", text: "What extracting does and doesn't do" },
+      {
+        type: "p",
+        text: "The pages you select are copied into a new PDF as they are, rather than being turned into pictures, so text stays selectable and the layout stays the same. Pages you didn't select aren't copied into the new file. When we tested this with a sample PDF, text from the unselected pages did not appear in the extracted result. Features that live outside the pages themselves, such as bookmarks or interactive form fields, may not carry over to the new file.",
+      },
+      {
+        type: "p",
+        text: "Both tools run entirely in your browser. Your PDF is read from your device and the new file is built there, so nothing is uploaded to Foldryn. If you're pulling pages out of something private, the extracted file contains only the pages you selected.",
+      },
+      { type: "h2", text: "Frequently asked questions" },
+      { type: "h3", text: "Can I extract pages that aren't next to each other?" },
+      {
+        type: "p",
+        text: "Yes. In the visual picker, click any pages you like. In Split PDF, separate them with commas, for example 2,7,15.",
+      },
+      { type: "h3", text: "Can I choose the order of the extracted pages?" },
+      {
+        type: "p",
+        text: "No. Extracted pages keep their original order. Foldryn doesn't have a tool for rearranging pages inside a PDF yet.",
+      },
+      { type: "h3", text: "Does extracting change my original PDF?" },
+      {
+        type: "p",
+        text: "No. You always get a new file, and your original isn't modified.",
+      },
+      { type: "h3", text: "Is there a limit on file size or page count?" },
+      {
+        type: "p",
+        text: "Files up to 50 MB are accepted. There's no fixed page limit, but very long documents depend on your device's memory, so previews can take a while to appear.",
+      },
+      { type: "h3", text: "Can I extract pages from a password-protected PDF?" },
+      {
+        type: "p",
+        text: "Not directly. Encrypted or password-protected files can't be processed, so remove the password first and then try again.",
+      },
+      {
+        type: "p",
+        text: "Once you know which of the two methods fits, extracting pages takes about a minute. For the visual route, start with the [Extract PDF Pages](/extract-pdf-pages) tool, and keep [Split PDF](/split-pdf) in mind when you'd rather type a range.",
       },
     ],
   },
@@ -738,7 +816,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "It's a few extra steps, but it works with the tools you already have. The guide on [splitting and extracting pages](/blog/how-to-split-extract-pages-from-pdf) walks through the page-range format.",
+        text: "It's a few extra steps, but it works with the tools you already have. The guide on [extracting pages from a PDF](/blog/how-to-split-extract-pages-from-pdf) walks through the page-range format.",
       },
       { type: "h2", text: "Check the result before you send it" },
       {

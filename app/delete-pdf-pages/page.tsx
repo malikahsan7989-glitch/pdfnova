@@ -62,7 +62,7 @@ export default function DeletePdfPagesPage() {
           href: "/blog/how-to-delete-pages-from-pdf",
         },
         {
-          title: "How to Split and Extract Specific Pages From Large PDF Documents",
+          title: "How to Extract Pages From a PDF (Step by Step)",
           href: "/blog/how-to-split-extract-pages-from-pdf",
         },
       ]}
