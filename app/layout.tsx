@@ -56,7 +56,14 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-white text-slate-900">
+      <head>
+  <script
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6825549336537662"
+    crossOrigin="anonymous"
+  />
+</head>
+<body className="flex min-h-full flex-col bg-white text-slate-900">
         <Navbar />
         <div className="flex-1">{children}</div>
         <Footer />
