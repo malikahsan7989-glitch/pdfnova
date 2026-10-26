@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-4">
         <div>
           <h3 className="text-xl font-bold">
-            Fold<span className="text-blue-400">ryn</span>
+            Foldryn
           </h3>
           <p className="mt-3 text-sm text-slate-400">
             Simple, fast PDF tools that run in your browser.

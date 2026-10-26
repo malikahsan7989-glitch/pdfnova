@@ -1,24 +1,20 @@
 import type { Metadata } from "next";
+import { POLICY_LAST_UPDATED } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Cookie Policy | Foldryn",
-  description: "How Foldryn uses cookies and similar technologies.",
+  description: "How Foldryn uses cookies and similar technologies, and what would change if advertising is enabled.",
   alternates: { canonical: "/cookie-policy" },
 };
+
+const link = "text-blue-600 hover:underline";
 
 export default function CookiePolicyPage() {
   return (
     <main className="px-4 py-16 sm:px-6">
       <div className="mx-auto max-w-3xl">
         <h1 className="text-3xl font-extrabold text-slate-900 sm:text-4xl">Cookie Policy</h1>
-        <p className="mt-2 text-sm text-slate-500">
-          Last updated:{" "}
-          {new Date().toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </p>
+        <p className="mt-2 text-sm text-slate-500">Last updated: {POLICY_LAST_UPDATED}</p>
 
         <div className="mt-8 space-y-8 text-slate-600 leading-7">
           <section>
@@ -27,41 +23,79 @@ export default function CookiePolicyPage() {
               Cookies are small text files stored on your device by your
               browser. They can be used for things like remembering
               preferences, understanding how a site is used, or delivering
-              relevant ads.
+              ads.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-slate-900">Current Use</h2>
-            <p className="mt-3">
-              Foldryn&apos;s PDF tools do not use cookies — file processing
-              happens locally in your browser and doesn&apos;t require them.
-              Our hosting provider may set minimal technical cookies
-              necessary to serve the site reliably.
-            </p>
+            <h2 className="text-xl font-bold text-slate-900">What Foldryn Uses Today</h2>
+            <ul className="mt-3 list-disc space-y-2 pl-6">
+              <li>
+                Foldryn&apos;s own code does not currently set cookies, and it
+                does not use browser storage such as localStorage.
+              </li>
+              <li>
+                The tools do not need cookies. Your files are processed in
+                your browser and are not uploaded, as described in our{" "}
+                <a href="/privacy-policy" className={link}>
+                  Privacy Policy
+                </a>
+                .
+              </li>
+              <li>
+                Foldryn does not currently load analytics or advertising
+                scripts, so no analytics or advertising cookies are set by us
+                or by third parties through our pages.
+              </li>
+              <li>
+                Our hosting provider, Vercel, may use technical cookies or
+                similar mechanisms needed to deliver and secure the site.
+              </li>
+            </ul>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-slate-900">Future Use</h2>
+            <h2 className="text-xl font-bold text-slate-900">If Advertising Is Enabled</h2>
             <p className="mt-3">
-              If we add analytics or advertising in the future, those
-              services may set their own cookies to measure usage or serve
-              ads. We will update this page to describe exactly what&apos;s
-              in use and how you can manage or opt out of them, consistent
-              with our{" "}
-              <a href="/privacy-policy" className="text-blue-600 hover:underline">
-                Privacy Policy
-              </a>
-              .
+              We may show ads from Google AdSense in the future. If we do,
+              Google and its partners may set cookies or use similar
+              technologies on Foldryn to serve and measure ads, including ads
+              based on your visits to this and other sites. This page and our
+              Privacy Policy will be reviewed before any ads go live.
+            </p>
+            <p className="mt-3">
+              For visitors in the European Economic Area, the United Kingdom
+              and Switzerland, we will provide a way to give or refuse
+              consent before cookies are used for personalized advertising.
             </p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold text-slate-900">Managing Cookies</h2>
             <p className="mt-3">
-              Most browsers let you view, block, or delete cookies through
-              their settings. Blocking cookies is unlikely to affect
-              Foldryn&apos;s core tools, since they don&apos;t rely on them.
+              Most browsers let you view, block, or delete cookies in their
+              settings. Blocking cookies is unlikely to affect Foldryn&apos;s
+              tools, since they don&apos;t rely on them. If advertising is
+              enabled, you will also be able to manage personalized ads
+              through{" "}
+              <a
+                href="https://adssettings.google.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={link}
+              >
+                Google Ads Settings
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://www.aboutads.info"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={link}
+              >
+                www.aboutads.info
+              </a>
+              .
             </p>
           </section>
         </div>

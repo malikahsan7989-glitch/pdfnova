@@ -12,9 +12,9 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: "compress-pdf-for-application-portals",
-    title: "How to Compress PDF Files for Online Application Portals Without Quality Loss",
+    title: "How to Compress PDF Files for Online Application Portals (and Keep Them Readable)",
     description:
-      "Many job, visa, and university portals reject PDFs over a strict size limit. Here's how to shrink your file without losing the details that matter.",
+      "Many job, visa, and university portals reject PDFs over a strict size limit. Here's how to bring your file under the limit while keeping the text and details readable.",
     date: "2026-02-10",
     readingTime: "6 min read",
     blocks: [
@@ -225,7 +225,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "On Foldryn, this is how [Merge PDF](/merge-pdf), [Split PDF](/split-pdf), [Compress PDF](/compress-pdf), [PDF to JPG](/pdf-to-jpg), and [JPG to PDF](/jpg-to-pdf) all work — the actual processing happens with libraries running in your browser tab, not on a remote server. There is no upload step for these tools to skip, because the architecture never sends your file out in the first place.",
+        text: "On Foldryn, this is how every tool works, including [Merge PDF](/merge-pdf), [Split PDF](/split-pdf), [Compress PDF](/compress-pdf), [PDF to JPG](/pdf-to-jpg), and [JPG to PDF](/jpg-to-pdf). The actual processing happens with libraries running in your browser tab, not on a remote server. There is no upload step to skip, because the tools never send your file out in the first place.",
       },
       { type: "h2", text: "Why This Matters More for Some Documents Than Others" },
       {

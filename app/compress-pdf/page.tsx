@@ -58,7 +58,7 @@ export default function CompressPdfPage() {
       ]}
       relatedGuides={[
         {
-          title: "How to Compress PDF Files for Online Application Portals Without Quality Loss",
+          title: "How to Compress PDF Files for Online Application Portals (and Keep Them Readable)",
           href: "/blog/compress-pdf-for-application-portals",
         },
       ]}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { POLICY_LAST_UPDATED } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Service | Foldryn",
@@ -11,7 +12,7 @@ export default function TermsPage() {
     <main className="px-4 py-16 sm:px-6">
       <div className="mx-auto max-w-3xl">
         <h1 className="text-3xl font-extrabold text-slate-900 sm:text-4xl">Terms of Service</h1>
-        <p className="mt-2 text-sm text-slate-500">Last updated: {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</p>
+        <p className="mt-2 text-sm text-slate-500">Last updated: {POLICY_LAST_UPDATED}</p>
 
         <div className="mt-8 space-y-8 text-slate-600 leading-7">
           <section>
@@ -28,13 +29,15 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-bold text-slate-900">Your Files</h2>
             <p className="mt-3">
-              You retain full ownership of any files you process using
-              Foldryn. As described in our{" "}
+              You keep full ownership of any files you process using Foldryn.
+              As described in our{" "}
               <a href="/privacy-policy" className="text-blue-600 hover:underline">
                 Privacy Policy
               </a>
-              , most tools process your files locally in your browser and we
-              never receive a copy of them.
+              , all of Foldryn&apos;s tools process your files locally in your
+              browser, and we do not receive a copy of them. You are
+              responsible for checking the results before you rely on or send
+              them.
             </p>
           </section>
 
@@ -56,6 +59,25 @@ export default function TermsPage() {
               To the fullest extent permitted by law, Foldryn is not liable
               for any indirect, incidental, or consequential damages arising
               from your use of the site or its tools.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-slate-900">Advertising and Third Parties</h2>
+            <p className="mt-3">
+              Foldryn does not currently display advertising. If we enable it
+              in the future, ads and any related cookies will be provided by
+              third parties under their own terms and policies, and we will
+              update our{" "}
+              <a href="/privacy-policy" className="text-blue-600 hover:underline">
+                Privacy Policy
+              </a>{" "}
+              and{" "}
+              <a href="/cookie-policy" className="text-blue-600 hover:underline">
+                Cookie Policy
+              </a>{" "}
+              before ads appear. Foldryn is not responsible for the content
+              of third-party websites linked from it.
             </p>
           </section>
 

@@ -16,11 +16,12 @@ export default function SecurityPage() {
           <section>
             <h2 className="text-xl font-bold text-slate-900">Browser-Based Processing</h2>
             <p className="mt-3">
-              Foldryn&apos;s core tools process your files locally in your
-              browser rather than on a server. This means for these tools,
-              your PDF and image files are never transmitted over the
-              network to us in the first place — there&apos;s no upload step
-              to secure, because it doesn&apos;t happen.
+              All of Foldryn&apos;s tools process your files locally in your
+              browser rather than on a server. This means your PDF and image
+              files aren&apos;t transmitted to us at all — there&apos;s no
+              upload step to secure, because it doesn&apos;t happen. The
+              website itself, including the code that runs these tools, is
+              delivered to your browser from our hosting provider.
             </p>
           </section>
 

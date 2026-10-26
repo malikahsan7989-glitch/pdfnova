@@ -94,7 +94,7 @@ export const tools: ToolMeta[] = [
     href: "/pdf-to-png",
     title: "PDF to PNG",
     shortTitle: "PDF to PNG",
-    description: "Convert PDF pages into PNG images with a transparent-friendly format.",
+    description: "Convert PDF pages into PNG images you can save or share.",
     icon: ImagePlus,
     category: "Convert",
   },

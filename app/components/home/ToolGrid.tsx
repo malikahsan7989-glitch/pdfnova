@@ -3,7 +3,7 @@ import { toolCategories, toolsByCategory } from "@/lib/tools";
 
 const categoryBlurb: Record<string, string> = {
   Organize: "Rearrange, split, rotate, and clean up your PDF's pages.",
-  Convert: "Move between PDF, JPG, and PNG without losing quality.",
+  Convert: "Turn PDF pages into JPG or PNG images, or combine images into a PDF.",
   Optimize: "Shrink file size for uploads and email attachments.",
   Edit: "Add watermarks and other finishing touches.",
 };

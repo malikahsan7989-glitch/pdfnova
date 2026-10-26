@@ -23,11 +23,11 @@ export default function AboutPage() {
             uploads.
           </p>
           <p>
-            Wherever technically possible, Foldryn processes your files
-            directly in your browser rather than on a server. That means
-            faster results in most cases and fewer of your files passing
-            through a server at all. Each tool page tells you clearly
-            whether it works this way.
+            Foldryn&apos;s tools process your files directly in your browser
+            rather than on a server, so your PDF and image files aren&apos;t
+            uploaded to Foldryn. That means faster results in most cases
+            and fewer of your files passing through a server at all. Each
+            tool page repeats this so you always know how it works.
           </p>
           <p>
             Foldryn is under active development, with new tools added over

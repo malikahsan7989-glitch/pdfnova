@@ -7,7 +7,7 @@ const steps = [
   {
     number: "2",
     title: "Process it in your browser",
-    description: "Your file is processed locally on your device using the tool you picked.",
+    description: "Your file is processed locally in your browser using the tool you picked, and it isn't uploaded to a server.",
   },
   {
     number: "3",

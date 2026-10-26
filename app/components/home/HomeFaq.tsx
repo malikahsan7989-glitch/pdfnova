@@ -14,7 +14,7 @@ const faqs = [
   {
     question: "Are my files uploaded to a server?",
     answer:
-      "No — every tool on Foldryn processes your file locally in your browser and never uploads it to a server. Each tool page also states this explicitly.",
+      "No. Foldryn's tools process your file locally in your browser, and it isn't uploaded to a server. Each tool page also states this.",
   },
   {
     question: "What file size limits apply?",

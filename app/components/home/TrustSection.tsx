@@ -10,7 +10,7 @@ const points = [
     icon: ShieldCheck,
     title: "Privacy-focused",
     description:
-      "Most tools process your files locally in your browser instead of uploading them to a server.",
+      "Foldryn's tools process your files locally in your browser instead of uploading them to a server.",
   },
   {
     icon: Smartphone,
