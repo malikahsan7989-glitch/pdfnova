@@ -4,6 +4,7 @@ import ToolGrid from "./components/home/ToolGrid";
 import TrustSection from "./components/home/TrustSection";
 import HowItWorks from "./components/home/HowItWorks";
 import HomeFaq from "./components/home/HomeFaq";
+import HomeGuides from "./components/home/HomeGuides";
 import JsonLd from "./components/shared/JsonLd";
 import { websiteSchema } from "@/lib/structuredData";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
@@ -29,6 +30,7 @@ export default function Home() {
       <JsonLd data={websiteSchema()} />
       <Hero />
       <ToolGrid />
+      <HomeGuides />
       <TrustSection />
       <HowItWorks />
       <HomeFaq />

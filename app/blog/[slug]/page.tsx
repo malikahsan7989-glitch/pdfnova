@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { blogPosts, getBlogPost } from "@/lib/blog";
+import { blogPosts, getBlogPost, blogCta } from "@/lib/blog";
 import BlogArticle from "../../components/blog/BlogArticle";
 import JsonLd from "../../components/shared/JsonLd";
 import { breadcrumbSchema } from "@/lib/structuredData";
@@ -35,6 +35,7 @@ export async function generateMetadata({
       siteName: SITE_NAME,
       type: "article",
       publishedTime: post.date,
+      ...(post.updated ? { modifiedTime: post.updated } : {}),
     },
   };
 }
@@ -65,10 +66,13 @@ export default async function BlogPostPage({
     headline: post.title,
     description: post.description,
     datePublished: post.date,
+    dateModified: post.updated ?? post.date,
     url: `${SITE_URL}/blog/${post.slug}`,
     author: { "@type": "Organization", name: SITE_NAME },
     publisher: { "@type": "Organization", name: SITE_NAME },
   };
+
+  const cta = blogCta[post.slug];
 
   const breadcrumbData = breadcrumbSchema([
     { name: "Home", path: "/" },
@@ -103,11 +107,21 @@ export default async function BlogPostPage({
         </nav>
 
         <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
-          {formatDate(post.date)} · {post.readingTime}
+          Published {formatDate(post.date)}
+          {post.updated && post.updated !== post.date ? ` · Last updated ${formatDate(post.updated)}` : ""} · {post.readingTime}
         </p>
         <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
           {post.title}
         </h1>
+        {cta && (
+          <Link
+            href={cta.href}
+            className="mt-6 inline-flex items-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+          >
+            {cta.label} →
+          </Link>
+        )}
+
 
         <div className="mt-8">
           <BlogArticle blocks={post.blocks} />

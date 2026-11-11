@@ -5,6 +5,8 @@ export interface BlogPost {
   title: string;
   description: string;
   date: string;
+  /** Set only when the article has genuinely been revised after publication. */
+  updated?: string;
   readingTime: string;
   blocks: BlogBlock[];
 }
@@ -15,7 +17,8 @@ export const blogPosts: BlogPost[] = [
     title: "How to Compress PDF Files for Online Application Portals (and Keep Them Readable)",
     description:
       "Many job, visa, and university portals reject PDFs over a strict size limit. Here's how to bring your file under the limit while keeping the text and details readable.",
-    date: "2026-02-10",
+    date: "2026-09-12",
+    updated: "2026-10-24",
     readingTime: "6 min read",
     blocks: [
       {
@@ -76,7 +79,7 @@ export const blogPosts: BlogPost[] = [
     title: "How to Combine Multiple Scanned Receipts and Documents into One PDF",
     description:
       "Expense reports, tax filing, and reimbursement forms almost always want one PDF, not a folder of loose images. Here's the fastest way to get there.",
-    date: "2026-02-24",
+    date: "2026-09-12",
     readingTime: "5 min read",
     blocks: [
       {
@@ -130,7 +133,7 @@ export const blogPosts: BlogPost[] = [
     title: "PDF vs. JPG: Which Format Should You Use for Documents and Images?",
     description:
       "PDF and JPG solve different problems. Here's a practical breakdown of when each format actually makes sense, and how to convert between them when you guessed wrong.",
-    date: "2026-03-03",
+    date: "2026-09-12",
     readingTime: "6 min read",
     blocks: [
       {
@@ -198,7 +201,8 @@ export const blogPosts: BlogPost[] = [
     title: "Why Browser-Based Local PDF Processing Is Safer Than Cloud Converters",
     description:
       "Many free PDF tools quietly upload your files to a server before processing them. Here's what that actually means for your privacy, and how to tell the difference.",
-    date: "2026-03-17",
+    date: "2026-09-12",
+    updated: "2026-10-24",
     readingTime: "6 min read",
     blocks: [
       {
@@ -252,7 +256,8 @@ export const blogPosts: BlogPost[] = [
     title: "How to Extract Pages From a PDF (Step by Step)",
     description:
       "Learn how to extract selected pages from a PDF and save them as a new file. Pick pages visually or type ranges like 1,3,5-8, right in your browser.",
-    date: "2026-03-31",
+    date: "2026-09-12",
+    updated: "2026-10-26",
     readingTime: "6 min read",
     blocks: [
       {
@@ -836,6 +841,21 @@ export const blogPosts: BlogPost[] = [
     ],
   },
 ];
+
+/** The tool each guide points readers to, shown as a button near the top of the article. */
+export const blogCta: Record<string, { href: string; label: string }> = {
+  "compress-pdf-for-application-portals": { href: "/compress-pdf", label: "Try the free Compress PDF tool" },
+  "combine-scanned-receipts-into-one-pdf": { href: "/jpg-to-pdf", label: "Try the free JPG to PDF tool" },
+  "pdf-vs-jpg-which-format-to-use": { href: "/pdf-to-jpg", label: "Try the free PDF to JPG tool" },
+  "browser-based-pdf-processing-vs-cloud-converters": { href: "/merge-pdf", label: "Try the free Merge PDF tool" },
+  "how-to-split-extract-pages-from-pdf": { href: "/extract-pdf-pages", label: "Try the free Extract PDF Pages tool" },
+  "how-to-rotate-pdf-pages": { href: "/rotate-pdf", label: "Try the free Rotate PDF tool" },
+  "how-to-delete-pages-from-pdf": { href: "/delete-pdf-pages", label: "Try the free Delete PDF Pages tool" },
+  "how-to-add-watermark-to-pdf": { href: "/watermark-pdf", label: "Try the free Watermark PDF tool" },
+  "how-to-convert-pdf-to-png": { href: "/pdf-to-png", label: "Try the free PDF to PNG tool" },
+  "how-to-add-page-numbers-to-pdf": { href: "/pdf-page-numbering", label: "Try the free page numbering tool" },
+  "how-to-merge-pdf-files-in-order": { href: "/merge-pdf", label: "Try the free Merge PDF tool" },
+};
 
 export function getBlogPost(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug);
