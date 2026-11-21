@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import AdSenseScript from "./components/shared/AdSenseScript";
 import { SITE_URL, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 import "./globals.css";
 
@@ -60,6 +61,7 @@ export default function RootLayout({
         <Navbar />
         <div className="flex-1">{children}</div>
         <Footer />
+        <AdSenseScript />
       </body>
     </html>
   );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { POLICY_LAST_UPDATED } from "@/lib/site";
+import { POLICY_LAST_UPDATED, ADSENSE_ENABLED } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Service | Foldryn",
@@ -64,6 +64,26 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-xl font-bold text-slate-900">Advertising and Third Parties</h2>
+            {ADSENSE_ENABLED ? (
+              <>
+              <p className="mt-3">
+                Foldryn displays advertising provided by third parties,
+                including Google AdSense. Ads and any related cookies are
+                subject to those third parties&apos; own terms and policies,
+                as described in our{" "}
+                <a href="/privacy-policy" className="text-blue-600 hover:underline">
+                  Privacy Policy
+                </a>{" "}
+                and{" "}
+                <a href="/cookie-policy" className="text-blue-600 hover:underline">
+                  Cookie Policy
+                </a>
+                . Foldryn is not responsible for the content of third-party
+                websites linked from it or advertised on it.
+              </p>
+            </>
+            ) : (
+              <>
             <p className="mt-3">
               Foldryn does not currently display advertising. If we enable it
               in the future, ads and any related cookies will be provided by
@@ -79,6 +99,8 @@ export default function TermsPage() {
               before ads appear. Foldryn is not responsible for the content
               of third-party websites linked from it.
             </p>
+          </>
+            )}
           </section>
 
           <section>

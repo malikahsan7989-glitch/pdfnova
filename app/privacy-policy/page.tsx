@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { POLICY_LAST_UPDATED } from "@/lib/site";
+import { POLICY_LAST_UPDATED, ADSENSE_ENABLED } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Foldryn",
@@ -93,6 +93,9 @@ export default function PrivacyPolicyPage() {
               aggregated usage figures, such as request counts, available to
               us. Foldryn&apos;s own website code does not currently include
               analytics or tracking scripts.
+              {ADSENSE_ENABLED
+                ? " When ads are shown, Google's advertising scripts may also collect information about your visit."
+                : ""}
             </p>
           </section>
 
@@ -107,11 +110,49 @@ export default function PrivacyPolicyPage() {
                 Cookie Policy
               </a>{" "}
               for details.
+              {ADSENSE_ENABLED
+                ? " Google and its partners may also set cookies when ads are shown, as explained in the Advertising section."
+                : ""}
             </p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold text-slate-900">Advertising</h2>
+            {ADSENSE_ENABLED ? (
+              <>
+              <p className="mt-3">
+                Foldryn displays ads provided by Google AdSense. Google, as a
+                third-party vendor, uses cookies to serve ads on Foldryn.
+                Google&apos;s use of advertising cookies enables it and its
+                partners to serve ads to you based on your visit to Foldryn
+                and other sites on the internet. You can opt out of
+                personalized advertising by visiting{" "}
+                <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className={externalLink}>
+                  Google Ads Settings
+                </a>
+                . You can also opt out of some third-party vendors&apos; use
+                of cookies for personalized advertising at{" "}
+                <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" className={externalLink}>
+                  www.aboutads.info
+                </a>
+                . More about how Google uses data from sites that use its
+                services is available at{" "}
+                <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className={externalLink}>
+                  policies.google.com/technologies/partner-sites
+                </a>
+                .
+              </p>
+              <p className="mt-3">
+                For visitors in the European Economic Area, the United
+                Kingdom and Switzerland, ads and the cookies they use depend
+                on the choices made in the consent message shown on the site.
+                Where that message is shown, you can change your choice later
+                using the privacy settings option it provides. Your files are
+                never shared with advertisers, because we never receive them.
+              </p>
+            </>
+            ) : (
+              <>
             <p className="mt-3">
               Foldryn does not currently display advertising, and no
               advertising scripts or advertising cookies are in use on the
@@ -163,6 +204,8 @@ export default function PrivacyPolicyPage() {
               be shown around the tools and content, and your files are never
               shared with advertisers, because we never receive them.
             </p>
+          </>
+            )}
           </section>
 
           <section>
@@ -179,9 +222,18 @@ export default function PrivacyPolicyPage() {
                 scripts to the pages you visit.
               </li>
               <li>
-                <strong>Google AdSense</strong> is not active. It would be
-                used only if advertising is enabled, as described in the
-                Advertising section.
+                {ADSENSE_ENABLED ? (
+                  <>
+                    <strong>Google AdSense</strong> serves the ads shown on
+                    Foldryn, as described in the Advertising section.
+                  </>
+                ) : (
+                  <>
+                    <strong>Google AdSense</strong> is not active. It would be
+                    used only if advertising is enabled, as described in the
+                    Advertising section.
+                  </>
+                )}
               </li>
             </ul>
           </section>

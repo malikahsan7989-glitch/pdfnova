@@ -35,7 +35,7 @@ export const blogPosts: BlogPost[] = [
         type: "ol",
         items: [
           "**Check the portal's actual limit first.** Most application forms state the maximum size near the upload button (commonly 2 MB, 5 MB, or 10 MB). Knowing the target number tells you how aggressive you need to be.",
-          "**Run your file through [Compress PDF](/compress-pdf).** Upload your document and let it process — the tool shows you the original size and the new size side by side, so you can see exactly how much was saved before you download anything.",
+          "**Run your file through [Compress PDF](/compress-pdf).** Add your document and let it process — the tool shows you the original size and the new size side by side, so you can see exactly how much was saved before you download anything.",
           "**Compare the before-and-after honestly.** If the reduction isn't enough to clear the portal's limit, the file's size is likely dominated by high-resolution scanned images rather than PDF overhead — in that case, re-scanning at a lower DPI (150–200 DPI is usually plenty for text documents) before compressing again will get you much further than compressing alone.",
         ],
       },
@@ -408,7 +408,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "Why pages end up sideways" },
       {
         type: "p",
-        text: "Usually it comes down to how the page was fed or held. Phone scanning apps guess the orientation from the way you tilted the phone, and they get it wrong more often than you'd expect, especially with landscape pages like tables or certificates. Sheet-fed scanners do the same thing when a few sheets go in the wrong way round. And if you've merged documents from different sources, one landscape page hiding in a stack of portrait ones is almost guaranteed.",
+        text: "Usually it comes down to how the page was fed or held. Phone scanning apps guess the orientation from the way you tilted the phone, and they get it wrong more often than you'd expect, especially with landscape pages like tables or certificates. Sheet-fed scanners do the same thing when a few sheets go in the wrong way round. And if you've merged documents from different sources, one landscape page hiding in a stack of portrait ones is very common.",
       },
       {
         type: "p",
@@ -431,7 +431,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "Does rotating hurt the quality?" },
       {
         type: "p",
-        text: "No. Rotating doesn't redraw the page or squash it into a new image. It changes a setting inside the PDF that tells viewers which way up the page should be shown. The text, images and fonts stay exactly as they were, so a sharp scan stays sharp.",
+        text: "No. Rotating doesn't redraw the page or squash it into a new image. It changes a setting inside the PDF that tells viewers which way up the page should be shown. The text, images and fonts aren't re-rendered or recompressed, so a sharp scan stays sharp.",
       },
       { type: "h2", text: "A few habits that save you trouble" },
       {

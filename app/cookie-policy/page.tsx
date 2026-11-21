@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { POLICY_LAST_UPDATED } from "@/lib/site";
+import { POLICY_LAST_UPDATED, ADSENSE_ENABLED } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Cookie Policy | Foldryn",
@@ -43,9 +43,9 @@ export default function CookiePolicyPage() {
                 .
               </li>
               <li>
-                Foldryn does not currently load analytics or advertising
-                scripts, so no analytics or advertising cookies are set by us
-                or by third parties through our pages.
+                {ADSENSE_ENABLED
+                  ? "Foldryn does not load analytics scripts. Ads are served by Google AdSense, which may set cookies, as described below."
+                  : "Foldryn does not currently load analytics or advertising scripts, so no analytics or advertising cookies are set by us or by third parties through our pages."}
               </li>
               <li>
                 Our hosting provider, Vercel, may use technical cookies or
@@ -55,7 +55,25 @@ export default function CookiePolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-slate-900">If Advertising Is Enabled</h2>
+            <h2 className="text-xl font-bold text-slate-900">{ADSENSE_ENABLED ? "Advertising Cookies" : "If Advertising Is Enabled"}</h2>
+            {ADSENSE_ENABLED ? (
+              <>
+              <p className="mt-3">
+                Foldryn shows ads from Google AdSense. Google and its
+                partners may set cookies or use similar technologies on
+                Foldryn to serve and measure ads, including ads based on your
+                visits to this and other sites.
+              </p>
+              <p className="mt-3">
+                For visitors in the European Economic Area, the United
+                Kingdom and Switzerland, a consent message is shown, and
+                cookies used for advertising follow the choices made there.
+                Where that message is shown, you can change your choice later
+                using the privacy settings option it provides.
+              </p>
+            </>
+            ) : (
+              <>
             <p className="mt-3">
               We may show ads from Google AdSense in the future. If we do,
               Google and its partners may set cookies or use similar
@@ -68,6 +86,8 @@ export default function CookiePolicyPage() {
               and Switzerland, we will provide a way to give or refuse
               consent before cookies are used for personalized advertising.
             </p>
+          </>
+            )}
           </section>
 
           <section>
@@ -75,9 +95,7 @@ export default function CookiePolicyPage() {
             <p className="mt-3">
               Most browsers let you view, block, or delete cookies in their
               settings. Blocking cookies is unlikely to affect Foldryn&apos;s
-              tools, since they don&apos;t rely on them. If advertising is
-              enabled, you will also be able to manage personalized ads
-              through{" "}
+              tools, since they don&apos;t rely on them. {ADSENSE_ENABLED ? "You can also manage personalized ads through" : "If advertising is enabled, you will also be able to manage personalized ads through"}{" "}
               <a
                 href="https://adssettings.google.com"
                 target="_blank"
