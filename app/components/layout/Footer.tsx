@@ -45,6 +45,11 @@ export default function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/pdf-use-cases" className="hover:text-white">
+                PDF Use Cases
+              </Link>
+            </li>
+            <li>
               <Link href="/contact" className="hover:text-white">
                 Contact
               </Link>

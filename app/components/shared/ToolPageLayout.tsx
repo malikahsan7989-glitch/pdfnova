@@ -9,6 +9,7 @@ import {
   faqPageSchema,
   breadcrumbSchema,
 } from "@/lib/structuredData";
+import { landingPagesFor, landingPath } from "@/lib/landing/registry";
 import JsonLd from "./JsonLd";
 
 interface ToolPageLayoutProps {
@@ -25,6 +26,7 @@ export default function ToolPageLayout({ slug, tool }: ToolPageLayoutProps) {
   if (!seo) throw new Error(`No SEO content defined for tool "${slug}"`);
 
   const path = `/${slug}`;
+  const useCases = landingPagesFor(slug).filter((p) => p.indexable !== false);
   const relatedTools = seo.related
     .map((s) => tools.find((t) => t.slug === s))
     .filter((t): t is NonNullable<typeof t> => Boolean(t));
@@ -149,6 +151,21 @@ export default function ToolPageLayout({ slug, tool }: ToolPageLayoutProps) {
             ))}
           </div>
         </section>
+
+        {useCases.length > 0 && (
+          <section className="mx-auto mt-8 max-w-2xl">
+            <h2 className="text-lg font-bold text-slate-900">{seo.name} for specific jobs</h2>
+            <ul className="mt-4 grid gap-x-6 gap-y-2 sm:grid-cols-2">
+              {useCases.map((p) => (
+                <li key={p.slug}>
+                  <Link href={landingPath(p)} className="text-sm font-medium text-blue-600 hover:underline">
+                    {p.h1}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {relatedTools.length > 0 && (
           <section className="mx-auto mt-8 max-w-2xl">
