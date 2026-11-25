@@ -1,6 +1,7 @@
 import { tools } from "@/lib/tools";
 import type { LandingPage } from "./types";
 import { mergePdfPages } from "./pages/merge-pdf";
+import { splitPdfPages } from "./pages/split-pdf";
 
 /**
  * One entry per tool. A tool appears here only once its pages are written.
@@ -9,6 +10,7 @@ import { mergePdfPages } from "./pages/merge-pdf";
  */
 const pagesByTool: Record<string, LandingPage[]> = {
   "merge-pdf": mergePdfPages,
+  "split-pdf": splitPdfPages,
 };
 
 export const LANDING_UPDATED = "2026-11-24";

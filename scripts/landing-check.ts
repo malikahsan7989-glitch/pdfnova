@@ -38,7 +38,7 @@ for (const p of pages) {
   for (const g of p.guides ?? []) if (!blogSlugs.has(g.href)) fail(id, `guide ${g.href} not a blog post`);
   for (const m of text.matchAll(/\]\((\/[^)]*)\)/g)) { if (!validPaths.has(m[1])) fail(id, `broken link ${m[1]}`); else if (inbound.has(m[1]) && m[1] !== id) inbound.set(m[1], (inbound.get(m[1]) ?? 0) + 1); }
   for (const re of BANNED) for (const [label, t] of [["title", p.title], ["description", p.description], ["body", text]] as const) if (re.test(t)) fail(id, `banned phrase ${re} in ${label}`);
-  if (!/not uploaded|aren.t uploaded|not upload|no upload/i.test(toolSeo[p.toolSlug]?.handling ?? "")) fail(id, "tool handling text lacks privacy statement");
+  if (!/not uploaded|aren.t uploaded|not upload|no upload|nothing is uploaded/i.test(toolSeo[p.toolSlug]?.handling ?? "")) fail(id, "tool handling text lacks privacy statement");
   const toks = strip(text).toLowerCase().replace(/[^a-z0-9\s]/g, "").split(/\s+/); const sh = new Set<string>();
   for (let i = 0; i + 5 <= toks.length; i++) sh.add(toks.slice(i, i + 5).join(" "));
   shingles.set(id, sh);
